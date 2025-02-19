@@ -11,25 +11,35 @@
     <div class="wrapper">
       <form class="form" action="" novalidate>
         <label for="email"></label>
-        <input type="email" name="email" id="email" placeholder="Email" />
+        <input
+          class="email"
+          required
+          type="email"
+          name="email"
+          id="email"
+          placeholder="Email" />
         <label for="postal"></label>
         <input
+          required
           type="text"
           name="postal"
           id="postal"
           placeholder="Postal Code" />
         <label for="password"></label>
         <input
-          type="password"
+          required
+          type="new-password"
           name="password"
           id="password"
           placeholder="Password" />
         <label for="passwordconfirmation"></label>
         <input
-          type="password"
+          required
+          type="new-password"
           name="passwordconfirmation"
           id="passwordconfirmation"
           placeholder="Password confirmation" />
+        <button>Submit</button>
       </form>
     </div>
     <script type="module" src="/src/main.js"></script>
