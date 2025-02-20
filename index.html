@@ -10,36 +10,51 @@
   <body>
     <div class="wrapper">
       <form class="form" action="" novalidate>
-        <label for="email"></label>
-        <input
-          class="email"
-          required
-          type="email"
-          name="email"
-          id="email"
-          placeholder="Email" />
-        <label for="postal"></label>
-        <input
-          required
-          type="text"
-          name="postal"
-          id="postal"
-          placeholder="Postal Code" />
-        <label for="password"></label>
-        <input
-          required
-          type="new-password"
-          name="password"
-          id="password"
-          placeholder="Password" />
-        <label for="passwordconfirmation"></label>
-        <input
-          required
-          type="new-password"
-          name="passwordconfirmation"
-          id="passwordconfirmation"
-          placeholder="Password confirmation" />
-        <button>Submit</button>
+        <h1>Registration</h1>
+        <div class="input__wrapper input__wrapper--email">
+          <label for="email"></label>
+          <input
+            class="email"
+            required
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Email" />
+          <p class="input__status input__status--email"></p>
+        </div>
+        <div class="input__wrapper">
+          <label for="postal"></label>
+          <input
+            class="postal"
+            required
+            type="text"
+            name="postal"
+            id="postal"
+            placeholder="Postal Code" />
+          <p class="input__status input__status--postal"></p>
+        </div>
+        <div class="input__wrapper">
+          <label for="password"></label>
+          <input
+            required
+            type="new-password"
+            name="password"
+            id="password"
+            placeholder="Password" />
+          <p class="input__status input__status--pass"></p>
+        </div>
+
+        <div class="input__wrapper">
+          <label for="passwordconfirmation"></label>
+          <input
+            required
+            type="new-password"
+            name="passwordconfirmation"
+            id="passwordconfirmation"
+            placeholder="Password confirmation" />
+          <p class="input__status input__status--passconfirm"></p>
+        </div>
+        <button class="submit__button">Submit</button>
       </form>
     </div>
     <script type="module" src="/src/main.js"></script>
