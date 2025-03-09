@@ -35,6 +35,7 @@ const checkEmail = () => {
   } else {
     makeInputInvalid(emailField, emailFieldStatus);
   }
+  checkValidFields();
 };
 
 const isEmailValid = (value) => {
@@ -67,6 +68,7 @@ const checkPassword = () => {
        At least one special symbol. 
        Minmum eight in length.`;
   }
+  checkValidFields();
 };
 
 const isPasswordValid = (value) => {
@@ -86,6 +88,7 @@ const checkPasswordConfirmation = () => {
     );
     passwordConfirmationFieldStatus.innerHTML = '❌ Passwords doesnt equal';
   }
+  checkValidFields();
 };
 
 emailField.addEventListener('input', checkEmail);
@@ -93,7 +96,16 @@ postalField.addEventListener('input', checkPostal);
 passwordField.addEventListener('input', checkPassword);
 passwordConfirmationField.addEventListener('input', checkPasswordConfirmation);
 
+const checkValidFields = () => {
+  if (document.querySelector('.invalid')) {
+    dataIsValid = false;
+  } else if (!document.querySelector('.invalid')) {
+    dataIsValid = true;
+    enableSubmitButton();
+  }
+};
 const enableSubmitButton = () => {
-  if (!dataIsValid) {
+  if (dataIsValid) {
+    submitButton.disabled = false;
   }
 };
