@@ -49,6 +49,7 @@ const checkPostal = () => {
   } else {
     makeInputInvalid(postalField, postalFieldStatus);
   }
+  checkValidFields();
 };
 
 const isPostalValid = (value) => {
@@ -97,15 +98,18 @@ passwordField.addEventListener('input', checkPassword);
 passwordConfirmationField.addEventListener('input', checkPasswordConfirmation);
 
 const checkValidFields = () => {
-  if (document.querySelector('.invalid')) {
-    dataIsValid = false;
-  } else if (!document.querySelector('.invalid')) {
-    dataIsValid = true;
-    enableSubmitButton();
-  }
-};
-const enableSubmitButton = () => {
+  let inputs = document.querySelectorAll('.input__status');
+  inputs.forEach((el) => {
+    if (el.classList.contains('invalid') || !el.classList.contains('valid')) {
+      dataIsValid = false;
+    } else {
+      dataIsValid = true;
+    }
+  });
+
   if (dataIsValid) {
     submitButton.disabled = false;
+  } else {
+    submitButton.disabled = true;
   }
 };
